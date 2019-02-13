@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bxm-application xmlns="http://www.bankwareglobal.com/schema/application" xmlns:ns2="http://www.bankwareglobal.com/schema/common" name="BxmDftCcSmp" loglevel="Default" shared="false" type="online">
-    <description>BXM 센터컷 온라인 샘플</description>
+<bxm-application xmlns="http://www.bankwareglobal.com/schema/application" xmlns:ns2="http://www.bankwareglobal.com/schema/common" name="BxmDftCcSmp" loglevel="Default" shared="false" reference-applications="" type="online">
+    <description>BXM 센터컷 온라인 샘플1</description>
     <datasource>
         <jndi-datasource name="MainDS" jndi-datasource="BXMNXA" jndi-xadatasource="BXMXA"/>
     </datasource>
