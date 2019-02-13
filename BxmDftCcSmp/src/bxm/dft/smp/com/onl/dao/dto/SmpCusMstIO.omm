@@ -1,0 +1,7 @@
+OMM bxm.dft.smp.com.onl.dao.dto.SmpCusMstIO
+<description="">
+{
+	String cusNo<length=10 description="고객번호">;
+	String cusNm<length=20 description="이름">;
+	String cusId<length=10 description="고객ID">;
+}

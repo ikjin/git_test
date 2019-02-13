@@ -1,0 +1,18 @@
+#TestCaseName=CCTest01
+#EndpointUrl=http://182.162.100.120:9539/ccServiceEndpoint/httpService/request.fld
+#EndpointUrlAvailable=http://182.162.100.120:9539/ccServiceEndpoint/httpService/request.fld
+#TrxMode=
+#InputHeader=
+<header default="true">
+<trxCd>SSMP2001A001</trxCd>
+<chlType>A1</chlType>
+</header>
+#InputOmmFileNm=bxm.cconexec.share.pc.dto.DepositCcServiceIn
+#InputOmm=
+<DepositCcServiceIn>
+    <cusNo>001</cusNo>
+    <accNum>001</accNum>
+    <amt>300</amt>
+</DepositCcServiceIn>
+
+#OutputOmmFileNm=

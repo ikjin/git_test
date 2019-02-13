@@ -1,0 +1,7 @@
+OMM bxm.dft.smp.dep.onl.sc.dto.PaymentServiceOut
+<description="">
+{
+	String cusNm<length=20 description="고객명">;
+	String accNum<length=6 formatType=masking format="ALL" description="계좌번호">;
+	BigDecimal amt<length=20 description="잔액">;
+}

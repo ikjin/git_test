@@ -1,0 +1,10 @@
+OMM bxm.dft.smp.dep.onl.sc.dto.TransferServiceIn
+<description="이체서비스 입력">
+{
+	String cusNo<length=10 description="고객번호">;
+	String payAccNum<length=6 description="출금계좌번호">;
+	String accPw<length=4 formatType=masking format="ALL" description="비밀번호">;
+	String depCusNo<length=10 description="입금고객번호">;
+	String depAccNum<length=6 description="입금계좌번호">;
+	BigDecimal amt<length=20 description="이체금액">;
+}

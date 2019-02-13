@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bxm.dft.smp.com.onl.dao.SmpRcpMstDAO">
+<!--Generated Fri Mar 17 15:50:18 KST 2017-->
+<select id="selectKdbRcpMstInfo" resultType="bxm.dft.smp.com.onl.dao.dto.SmpRcpMstIO">
+SELECT    
+        A.CUS_ID AS cusId, 
+        A.ACC_NUM AS accNum, 
+        A.OP_BRCH AS opBrch, 
+        A.AMT AS amt, 
+        A.ACC_PW AS accPw
+  FROM  SMP_RCP_MST A
+ order by A.CUS_ID
+</select>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bxm.dft.smp.com.onl.dao.CustomerAccountCommonDAO">
+<!--Generated Fri Mar 17 15:49:19 KST 2017-->
+<select id="customer_account_common_dao" resultType="bxm.dft.smp.com.onl.dao.dto.SmpCusMstIO">
+SELECT    
+   A.CUS_NO AS cusNo, 
+   A.CUS_NM AS cusNm, 
+   A.CUS_ID AS cusId
+  FROM  SMP_CUS_MST A
+ WHERE A.CUS_NO = #{cusNo}
+</select>
+<select id="customer_account_common_dao_acc" resultType="bxm.dft.smp.com.onl.dao.dto.SmpRcpMstIO">
+SELECT    
+        A.CUS_ID AS cusId, 
+        A.ACC_NUM AS accNum, 
+        A.OP_BRCH AS opBrch, 
+        A.AMT AS amt, 
+        A.ACC_PW AS accPw
+  FROM  SMP_RCP_MST A
+ WHERE A.CUS_ID = #{cusId}
+   AND A.ACC_NUM = #{accNum}
+</select>
+</mapper>

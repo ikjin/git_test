@@ -1,0 +1,6 @@
+OMM bxm.dft.smp.com.onl.dao.dto.SmpAccMstIO
+<description="">
+{
+	Integer opBrch<length=1 description="계좌개설점">;
+	BigDecimal amt<length=20 description="잔액">;
+}

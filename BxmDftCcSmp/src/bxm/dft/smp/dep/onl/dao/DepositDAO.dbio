@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bxm.dft.smp.dep.onl.dao.DepositDAO">
+<!--Generated Fri Mar 17 15:50:41 KST 2017-->
+<update id="deposit_dao" parameterType="bxm.dft.smp.com.onl.dao.dto.SmpRcpMstIO">
+UPDATE  
+       SMP_RCP_MST
+   SET AMT = #{amt}
+ WHERE CUS_ID = #{cusId}
+   AND ACC_NUM = #{accNum}
+</update>
+</mapper>
