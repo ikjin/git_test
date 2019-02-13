@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+         http://www.bankwareglobal.com/schema/batchex http://www.bankwareglobal.com/schema/batchex/spring-batch-ex-2.1.xsd
+         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<import resource="classpath:JobConfig.xml" />
+
+	<job-component xmlns="http://www.bankwareglobal.com/schema/batchex"
+		id="jobcomp" with-dependon="true">
+		<base-package name="bxm.dft.cc.bat.bean">
+			<include name="InterestCalculationBatch*" />
+		</base-package>
+	</job-component>
+
+	<!-- * 배치작업 : DB TO FILE(FIXED) -->
+	<job id="InterestCalculationBatch" xmlns="http://www.bankwareglobal.com/schema/batchex">
+		<step id="InterestCalculationBatch_S01" parent="parentStep">
+			<tasklet>
+				<chunk commit-interval="5" reader="InterestCalculationBatchBean"
+					processor="InterestCalculationBatchBean" writer="InterestCalculationBatch001" />
+			</tasklet>
+		</step>
+	</job>
+
+	<!-- * Fixed File Write 처리 bean 설정 -->
+	<bean id="InterestCalculationBatch001" parent="WFixed" scope="step">
+		<property name="name" value="InterestCalculationBatch001" />
+		<property name="resource"
+			value="file:///home/bxm/service/centercut/cc_shell/CCINPUT_#{jobParameters['fName']}.dat" />
+		<property name="encoding" value="EUC-KR" />
+		<property name="itemAggregator">
+			<bean class="bxm.batch.item.file.transform.ItemOmmAggregator">
+				<property name="encoding" value="EUC-KR" />
+				<property name="targetType"
+					value="bxm.dft.cc.bat.bean.dto.InterestCalculationBatchOut" />
+			</bean>
+		</property>
+	</bean>
+
+</beans>

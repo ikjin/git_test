@@ -1,0 +1,29 @@
+OMM bxm.dft.cc.bat.dao.dto.DBxmCcWorkStatus001selectList00OutDto
+<description="">
+{
+	String domainId<length=14 description="도메인ID">;
+	String ccId<length=9 description="센터컷ID">;
+	String procDt<length=8 description="처리일자">;
+	Integer acptNo<length=5 description="접수번호">;
+	Integer tnNo<length=2 description="회차번호">;
+	Integer execNo<length=6 description="실행번호">;
+	Integer ccProcStatusCd<length=2 description="처리상태">;
+	String firstStartDt<length=8 description="최초시작일자">;
+	String firstStartTime<length=6 description="최초시작시각">;
+	String reStartDt<length=8 description="재시작일자">;
+	String reStartTime<length=6 description="재시작시각">;
+	String endDt<length=8 description="종료일자">;
+	String endTime<length=6 description="종료시각">;
+	BigDecimal maxProcCnt<length=19 description="최대처리개수">;
+	Integer lastProcNo<length=9 description="최종처리번호">;
+	BigDecimal totalTargetCnt<length=19 description="총대상건수">;
+	BigDecimal totalTargetAmt<length=19 decimal=2 description="총대상금액">;
+	BigDecimal normalProcCnt<length=19 description="정상처리건수">;
+	BigDecimal normalProcAmt<length=19 decimal=2 description="정상처리금액">;
+	BigDecimal errProcCnt<length=19 description="오류처리건수">;
+	BigDecimal errProcAmt<length=19 decimal=2 description="오류처리금액">;
+	BigDecimal delProcCnt<length=19 description="삭제처리건수">;
+	BigDecimal delProcAmt<length=19 decimal=2 description="삭제처리금액">;
+	String modifyUserId<length=50 description="변경사용자ID">;
+	String modifyOccurDttm<length=23 description="변경발생일시">;
+}

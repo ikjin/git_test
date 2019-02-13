@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bxm.dft.cc.bat.dao.ResultCCDAO">
+<!--Generated Fri May 04 19:22:12 KST 2018-->
+<select id="selectList00" resultType="bxm.dft.cc.bat.dao.dto.DBxmCcWorkStatus001selectList00OutDto">
+SELECT /* 센터컷 작업 */ 
+       DOMAIN_ID AS domainId /*도메인ID*/,
+       CC_ID AS ccId /*센터컷ID*/,
+       PROC_DT AS procDt /*처리일자*/,
+       ACPT_NO AS acptNo /*접수번호*/,
+       TN_NO AS tnNo /*회차번호*/,
+       EXEC_NO AS execNo /*실행번호*/,
+       CC_PROC_STATUS_CD AS ccProcStatusCd /*처리상태*/,
+       FIRST_START_DT AS firstStartDt /*최초시작일자*/,
+       FIRST_START_TIME AS firstStartTime /*최초시작시각*/,
+       RE_START_DT AS reStartDt /*재시작일자*/,
+       RE_START_TIME AS reStartTime /*재시작시각*/,
+       END_DT AS endDt /*종료일자*/,
+       END_TIME AS endTime /*종료시각*/,
+       MAX_PROC_CNT AS maxProcCnt /*최대처리개수*/,
+       LAST_PROC_NO AS lastProcNo /*최종처리번호*/,
+       TOTAL_TARGET_CNT AS totalTargetCnt /*총대상건수*/,
+       TOTAL_TARGET_AMT AS totalTargetAmt /*총대상금액*/,
+       NORMAL_PROC_CNT AS normalProcCnt /*정상처리건수*/,
+       NORMAL_PROC_AMT AS normalProcAmt /*정상처리금액*/,
+       ERR_PROC_CNT AS errProcCnt /*오류처리건수*/,
+       ERR_PROC_AMT AS errProcAmt /*오류처리금액*/,
+       DEL_PROC_CNT AS delProcCnt /*삭제처리건수*/,
+       DEL_PROC_AMT AS delProcAmt /*삭제처리금액*/,
+       MODIFY_USER_ID AS modifyUserId /*변경사용자ID*/,
+       MODIFY_OCCUR_DTTM AS modifyOccurDttm /*변경발생일시*/
+  FROM BXM_CC_WORK_STATUS 
+  WHERE DOMAIN_ID = #{domainId} AND CC_ID = #{ccId}
+  	AND PROC_DT = #{pcsnDt}
+  	AND ACPT_NO = #{acptNo}
+  	AND TN_NO = #{tnNo}
+  ORDER BY EXEC_NO ASC
+</select>
+</mapper>

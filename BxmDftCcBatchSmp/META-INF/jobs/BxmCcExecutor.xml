@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.bankwareglobal.com/schema/batchex http://www.bankwareglobal.com/schema/batchex/spring-batch-ex.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<job-component xmlns="http://www.bankwareglobal.com/schema/batchex" id="jobcomp" with-dependon="true">
+		<base-package name="bxm.dft.cc.bat.bean">
+			<include name="BxmCc*"/>
+		</base-package>
+	</job-component>
+
+
+	<job id="BxmCcExecutor" xmlns="http://www.bankwareglobal.com/schema/batchex">
+		<step id="BxmCcExecutor100" parent="parentStep" next="BxmCcStatusChecker100">
+			<tasklet tm-datasource="MainDS" ref="BxmCcExecutorBean"/>
+		</step>
+		<!-- 
+		<step id="BxmCcStatusChecker100" parent="parentStep">
+			<tasklet tm-datasource="MainDS" ref="BxmCcStatusCheckerBean"/>
+		</step>
+		 -->
+	</job>
+</beans>
