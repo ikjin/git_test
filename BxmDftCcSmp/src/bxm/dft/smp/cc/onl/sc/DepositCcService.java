@@ -50,7 +50,7 @@ public class DepositCcService {
 		logger.debug("======================================");
 		
 		/**
-		 * 입력 항목 체크 123
+		 * 입력 항목 체크
 		 */
 		this.inputValidation(in);
 		

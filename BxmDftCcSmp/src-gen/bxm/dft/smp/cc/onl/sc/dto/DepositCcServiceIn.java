@@ -23,7 +23,7 @@ import java.util.Hashtable;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
- * @Description 
+ * @Description 테스트
  */
 @XmlType(propOrder={"cusNo", "accNum", "amt"}, name="DepositCcServiceIn")
 @XmlRootElement(name="DepositCcServiceIn")
@@ -33,7 +33,7 @@ public class DepositCcServiceIn  implements IOmmObject, Predictable, FieldInfo  
 	private static final long serialVersionUID = -2034330523L;
 
 	@XmlTransient
-	public static final String OMM_DESCRIPTION = "";
+	public static final String OMM_DESCRIPTION = "테스트";
 	
 	@XmlTransient
 	public static final String OMM_VERSION = "";
